@@ -6,6 +6,13 @@
   padding: 0;
 }
 
+/* For Routes purpose 'NavLink' */
+.active {
+  border-top: 2px solid blue;
+  background-color: yellow;
+}
+
+
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #202142;
@@ -21,6 +28,8 @@ ul {
   max-width: 768px;
   margin: auto;
   padding: 0 20px;
+  /* Fixing the showing the scroller, when deleting a Card */
+  overflow-y: hidden;
 }
 
 header {

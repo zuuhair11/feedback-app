@@ -1,6 +1,5 @@
 import { v4 as uuidv4 } from 'uuid' ;
-import { BrowserRouter,Routes, Route, NavLink } from 'react-router-dom' ;
-import Card from './components/shared/Card' ;
+import { BrowserRouter,Routes, Route } from 'react-router-dom' ;
 import { useState } from 'react' ;
 import Header from './components/Header' ;
 import FeedbackList from './components/FeedbackList' ;
@@ -9,8 +8,7 @@ import FeedbackForm from './components/FeedbackForm' ;
 import AboutIconLink from './components/AboutIconLink' ;
 import AboutPage from './pages/AboutPage' ;
 import FeedbackData from './data/feedbackData' ;
-// Use params
-import Post from './components/Post' ;
+
 
 
 function App() {
@@ -51,25 +49,7 @@ function App() {
                     />
                     
                     <Route path='/about' element={ <AboutPage /> } />
-
-                    {/* useParams */}
-                    <Route path='/post/:id/:name' element={ <Post /> } />
-
-                    {/* Navigate */}
-                    <Route path='/post/*' element={ <Post /> } />
                 </Routes>
-                
-
-                {/* NavLink */}
-                <Card>
-                    <NavLink to='/' activeclassname='active'>
-                        Home
-                    </NavLink>
-
-                    <NavLink to='/about' activeclassname='active'>
-                        About
-                    </NavLink>
-                </Card>
                 
                 {/* Link */}
                 <AboutIconLink />

@@ -1,10 +1,18 @@
-import { useState } from "react" ;
+import { useState, useContext, useEffect } from "react" ;
+import FeedbackContext from '../context/FeedbackContext' ;
 
 
 function RatinSelect({ select }) {
     // For styling when I checked a button
     const [selected, setSelected] = useState(10);
+    
+    const { feedbackEdit } = useContext(FeedbackContext);
 
+    useEffect( () => {
+        if(feedbackEdit.edit === true) {
+            setSelected(feedbackEdit.item.rating);
+        }
+    }, [feedbackEdit]);
 
     const handleChange = (e) => {
         // This for setting the checked to true to apply a style css
